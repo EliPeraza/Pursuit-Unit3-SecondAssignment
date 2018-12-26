@@ -13,7 +13,7 @@ class StarWarsViewController: UIViewController {
   
   @IBOutlet weak var starWarsTableView: UITableView!
   
-  var starWarsMovies = [MovieInfo]() {
+  private var starWarsMovies = [StarWarsMovies]() {
     didSet {
       DispatchQueue.main.async {
         self.starWarsTableView.reloadData()
@@ -23,10 +23,24 @@ class StarWarsViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      dump(starWarsMovies)
       starWarsTableView.dataSource = self
+      getMovieData()
+      dump(starWarsMovies)
+
     }
-    
+  
+  func getMovieData() {
+    StarWarsDataBaseAPI.getMovieInfo(keyword: "films") { (error, data) in
+      DispatchQueue.main.async {
+        if let error = error {
+         print(error)
+        }
+        if let data = data {
+         self.starWarsMovies = data
+        }
+      }
+    }
+  }
 
  
 
@@ -41,8 +55,8 @@ extension StarWarsViewController: UITableViewDataSource {
     guard let cell = starWarsTableView.dequeueReusableCell(withIdentifier: "SWCell", for: indexPath) as? StarwarsCustomCell else {return UITableViewCell()}
     
     let currentEpisode = starWarsMovies[indexPath.row]
-    
     cell.titleSWCell.text = currentEpisode.title
+//    cell.titleSWCell.text = currentEpisode
     
     return cell
   }

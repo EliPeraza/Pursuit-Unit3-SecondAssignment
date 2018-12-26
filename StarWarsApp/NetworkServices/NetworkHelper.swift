@@ -16,7 +16,7 @@ final class NetworkHelper {
     }
     var request = URLRequest(url: url)
     request.httpMethod = httpMethod
-    
+
     if let cachedResponsed = URLCache.shared.cachedResponse(for: request) {
       completionHandler(nil, cachedResponsed.data, cachedResponsed.response as? HTTPURLResponse)
     } else {

@@ -9,24 +9,26 @@
 import Foundation
 
 struct StarWarsMovies: Codable {
-
-  let results:[MovieInfo]
   
-}
-
-struct MovieInfo: Codable {
+  struct MovieInfo: Codable {
+    let results:[StarWarsMovies]
+  }
+  
+  
   let title: String
-  let episodeID: Int
-  let epeningCrawl: String
+  let episodeID: Int?
+  let openingCrawl: String?
   let director: String
-  let releaseDate: String
+  let releaseDate: String?
   let url: String
 }
 
 private enum CodingKeys: String, CodingKey {
-  
+  case title
   case episodeID = "episode_id"
-  case epeningCrawl = "opening_crawl"
+  case openingCrawl = "opening_crawl"
+  case director
   case releaseDate = "release_date"
+  case url
   
 }
