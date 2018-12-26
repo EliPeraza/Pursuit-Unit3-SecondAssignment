@@ -16,19 +16,19 @@ struct StarWarsMovies: Codable {
   
   
   let title: String
-  let episodeID: Int?
-  let openingCrawl: String?
+  let episode_id: Int?
+  let opening_crawl: String?
   let director: String
-  let releaseDate: String?
+  let release_date: String?
   let url: String
 }
 
-private enum CodingKeys: String, CodingKey {
-  case title
-  case episodeID = "episode_id"
-  case openingCrawl = "opening_crawl"
-  case director
-  case releaseDate = "release_date"
-  case url
-  
-}
+//private enum CodingKeys: String, CodingKey {
+//  case title
+//  case episodeID = "episode_id"
+//  case openingCrawl = "opening_crawl"
+//  case director
+////  case releaseDate = "release_date"
+//  case url
+//
+//}

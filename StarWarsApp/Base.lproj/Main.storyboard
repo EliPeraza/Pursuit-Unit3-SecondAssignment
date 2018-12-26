@@ -35,24 +35,34 @@
                                                         <constraint firstAttribute="width" constant="164" id="Wk8-0F-Qm2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhu-43-9Ra">
-                                                    <rect key="frame" x="175" y="0.0" width="174" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhu-43-9Ra">
+                                                    <rect key="frame" x="175" y="36" width="196" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgB-Hq-Hxp">
+                                                    <rect key="frame" x="175" y="68" width="196" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Dhu-43-9Ra" firstAttribute="trailing" secondItem="PSf-TS-q41" secondAttribute="trailingMargin" constant="11" id="CRU-E7-ceB"/>
+                                                <constraint firstItem="vgB-Hq-Hxp" firstAttribute="top" secondItem="Dhu-43-9Ra" secondAttribute="bottom" constant="11" id="DDS-tP-fdL"/>
                                                 <constraint firstItem="ZYq-g2-YVR" firstAttribute="leading" secondItem="PSf-TS-q41" secondAttribute="leading" id="HXz-dq-DPv"/>
-                                                <constraint firstItem="Dhu-43-9Ra" firstAttribute="top" secondItem="ZYq-g2-YVR" secondAttribute="top" id="Kdv-Pg-X0Y"/>
                                                 <constraint firstItem="ZYq-g2-YVR" firstAttribute="centerY" secondItem="PSf-TS-q41" secondAttribute="centerY" id="Otc-UE-CLA"/>
-                                                <constraint firstItem="Dhu-43-9Ra" firstAttribute="leading" secondItem="ZYq-g2-YVR" secondAttribute="trailing" constant="11" id="Zy9-mu-bu7"/>
+                                                <constraint firstItem="vgB-Hq-Hxp" firstAttribute="leading" secondItem="ZYq-g2-YVR" secondAttribute="trailing" constant="11" id="SZP-LP-s5W"/>
+                                                <constraint firstItem="vgB-Hq-Hxp" firstAttribute="trailing" secondItem="PSf-TS-q41" secondAttribute="trailingMargin" constant="11" id="ek8-no-hyx"/>
+                                                <constraint firstItem="Dhu-43-9Ra" firstAttribute="top" secondItem="PSf-TS-q41" secondAttribute="topMargin" constant="25" id="gtC-H6-5m9"/>
+                                                <constraint firstItem="Dhu-43-9Ra" firstAttribute="leading" secondItem="ZYq-g2-YVR" secondAttribute="trailing" constant="11" id="mRC-Rz-cBh"/>
                                                 <constraint firstItem="ZYq-g2-YVR" firstAttribute="top" secondItem="PSf-TS-q41" secondAttribute="top" id="pbo-3G-avK"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Dhu-43-9Ra" secondAttribute="trailing" constant="11" id="ttn-Yb-98T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageSWCell" destination="ZYq-g2-YVR" id="gG2-fW-iSb"/>
+                                            <outlet property="releaseYear" destination="vgB-Hq-Hxp" id="5s4-D3-yPd"/>
                                             <outlet property="titleSWCell" destination="Dhu-43-9Ra" id="PtT-5j-SgC"/>
                                             <segue destination="UaD-Zf-wtW" kind="show" id="lSE-vO-AWn"/>
                                         </connections>

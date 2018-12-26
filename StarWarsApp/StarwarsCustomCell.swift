@@ -17,4 +17,7 @@ class StarwarsCustomCell: UITableViewCell {
   @IBOutlet weak var titleSWCell: UILabel!
   
 
+  @IBOutlet weak var releaseYear: UILabel!
+  
+  
 }

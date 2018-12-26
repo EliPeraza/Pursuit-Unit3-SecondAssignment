@@ -24,6 +24,7 @@ class StarWarsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       starWarsTableView.dataSource = self
+      starWarsTableView.delegate = self 
       getMovieData()
       dump(starWarsMovies)
 
@@ -56,11 +57,16 @@ extension StarWarsViewController: UITableViewDataSource {
     
     let currentEpisode = starWarsMovies[indexPath.row]
     cell.titleSWCell.text = currentEpisode.title
-//    cell.titleSWCell.text = currentEpisode
-    
+    cell.releaseYear.text = "Released on: " + currentEpisode.release_date!
     return cell
   }
   
+}
+
+extension StarWarsViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 150
+  }
 }
 
 
