@@ -43,7 +43,14 @@ class StarWarsViewController: UIViewController {
     }
   }
 
- 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = starWarsTableView.indexPathForSelectedRow,
+      let detailedStarWarsVC = segue.destination as? AdditionalInfoViewController else {fatalError("error with segue")}
+    
+    let currentMovie = starWarsMovies[indexPath.row]
+    
+    detailedStarWarsVC.movie = currentMovie
+  }
 
 }
 
@@ -57,15 +64,20 @@ extension StarWarsViewController: UITableViewDataSource {
     
     let currentEpisode = starWarsMovies[indexPath.row]
     cell.titleSWCell.text = currentEpisode.title
-    cell.releaseYear.text = "Released on: " + currentEpisode.release_date!
+    if let releaseDate = currentEpisode.release_date {
+    cell.releaseYear.text = "Released on: " + releaseDate
+    } else {
+     cell.releaseYear.text = "no date available"
+    }
+
     return cell
   }
-  
+
 }
 
 extension StarWarsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 150
+    return 100
   }
 }
 

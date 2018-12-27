@@ -9,13 +9,22 @@
 import UIKit
 
 class AdditionalInfoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
-
   
-
+  public var movie: StarWarsMovies!
+  
+  
+  @IBOutlet weak var moviePoster: UIImageView!
+  
+  @IBOutlet weak var introText: UITextView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setDetailedView()
+  }
+  
+  func setDetailedView() {
+    introText.text = movie.opening_crawl
+  }
+  
+  
 }

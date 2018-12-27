@@ -127,6 +127,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kwi-Yh-d63"/>
                     </view>
+                    <connections>
+                        <outlet property="introText" destination="Bez-2Y-4Jr" id="UoG-xA-4LO"/>
+                        <outlet property="moviePoster" destination="dY7-Mi-UcA" id="ZgW-G7-DqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdm-tT-rJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
